@@ -19,12 +19,3 @@ end)
 Section:NewButton("Safe zone","Beta", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Lobby.BasePlate.CFrame
 end)
-Section:NewButton("Hunter win (doesn't works)","Teleport", function()
-    for i,v in pairs(game:GetDescendants()) do
-if v.Name == "HumanoidRootPart" then
-    root = game.Workspace:WaitFirstChild("HumanoidRootPart")
-    print(root)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = root.CFrame
-end
-end
-end)
