@@ -1,5 +1,30 @@
-for i,v in pairs(game:GetDescendants()) do
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+
+local Window = Library.CreateLib("Hide and Seek", "RJTheme3")
+
+local Tab = Window:NewTab('Auto Farm')
+
+local Section = Tab:NewSection("Coins")
+
+local plr = game.Players:GetPlayers()
+print(plr)
+Section:NewButton("AutoFarm","Auto Coins", function()
+	for i,v in pairs(game:GetDescendants()) do
 		if v.Name == 'Credit' then
 			v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 			wait(0.1)
 		end
+	end
+end)
+Section:NewButton("Safe zone","Beta", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Lobby.BasePlate.CFrame
+end)
+Section:NewButton("Hunter win (doesn't works)","Teleport", function()
+    for i,v in pairs(game:GetDescendants()) do
+if v.Name == "HumanoidRootPart" then
+    root = game.Workspace:WaitFirstChild("HumanoidRootPart")
+    print(root)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = root.CFrame
+end
+end
+end)
